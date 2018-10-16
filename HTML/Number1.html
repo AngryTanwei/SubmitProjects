@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<script type="text/javascript">
+  function a(){
+    if(form1.text1.value== "" && form1.text2.value== "" ) {
+      alert("请输入用户名和密码!");
+      return false;
+    }
+    else if(form1.text1.value== "") {
+      alert("请输入用户名！");
+      return false;
+    }
+    else if(form1.text2.value== ""){
+      alert("请输入密码！");
+      return false;
+    }
+
+    if(form1.text3.value == ""){
+      alert("请输入验证码");
+    }
+    if(form1.text1.value !="" && form1.text2.value !="" && form1.text3.value == "264d"||form1.text3.value == "264D"){
+      alert("登录成功！");
+      window.open('http://www.baidu.com/', '_self','');
+      return true;
+    }else{
+      alert("验证码错误，登录失败！");
+      return false;
+    }
+  }
+
+
+</script>
+
+<style>
+       #body{
+             background:url("src/img/earth.jpg") no-repeat center 0px;
+         background-size: cover;
+
+       }
+
+        #signin{
+             width:320px ;
+             margin: 200px auto;
+             background:	#0e263c top left;
+             background-size:100%;
+          opacity: 0.7;
+        }
+
+        .button{
+          position:relative;
+          top:-40px;
+          width: 50px;
+          left:100px;
+        }
+</style>
+
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>登录界面</title>
+</head>
+
+
+<body id = "body" name = "body1">
+
+    <div id="signin" style="text-align:center">
+      <table style=" margain:auto">
+        <form method="post" action="www.baidu.com" name="form1">
+          <tr>
+            <td style = "color:#ffffff">用户名</td> <td><input type="text" name="text1" value=""  ></td>
+          </tr>
+          <tr>
+            <td style = "color:#ffffff">密码</td> <td><input type="password" name="text2"  value=""></td>
+          </tr>
+          <tr>
+            <td style = "color:#ffffff">验证码</td><td><input type="text" name="text3" style = "width:50px" value=""></td>
+          </tr>
+          <tr>
+            <td><img src="src/img/yzm.png" alt="如果图片无法显示，请刷新页面"></td>
+          </tr>
+          <tr>
+
+            <td><input type="button" class="button" value="登录" name="login" type="submit" onclick="a()"/></td>
+
+          </tr>
+          <tr>
+            <td><input type="button" value="重置" class="button" type="reset" style=" top:-68px;left:200px;"/></td>
+          </tr>
+        </form>
+
+      </table>
+    </div>
+</body>
+</html>
